@@ -55,12 +55,6 @@ function draw() {
     playerY += playerSpeed;
   }
 
-  //Collision Checker
-  let distance = dist(playerX, playerY, chaosBallX + chaosBallSize/2, chaosBallY + chaosBallSize/2);
-  if (distance < (playerSize + chaosBallSize/2)) {
-    isGameOver = true
-  }
-
   // Draw Player
   fill(255)
   circle(playerX, playerY, playerSize);
@@ -68,6 +62,12 @@ function draw() {
   // Draw Chaos Ball
   fill(0)
   circle(chaosBallX, chaosBallY, chaosBallSize);
+
+  //Collision Checker
+  let distance = dist(playerX, playerY, chaosBallX, chaosBallY);
+  if (distance < (playerSize + chaosBallSize/2)) {
+    isGameOver = true
+  }
 
   // Chaos Ball Movement
   chaosBallX += chaosBallSpeedX;
