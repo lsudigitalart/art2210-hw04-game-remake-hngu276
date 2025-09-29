@@ -42,22 +42,22 @@ function draw() {
   gameTime++;
 
   // Player Movement
-  if (keyIsDown(LEFT_ARROW) && playerX > playerSize/2) {
+  if (keyIsDown(LEFT_ARROW) && playerX > playerSize) {
     playerX -= playerSpeed;
   }
-  if (keyIsDown(RIGHT_ARROW) && playerX < width - playerSize/2) {
+  if (keyIsDown(RIGHT_ARROW) && playerX < width - playerSize) {
     playerX += playerSpeed;
   }
-  if (keyIsDown(UP_ARROW) && playerY > playerSize/2) {
+  if (keyIsDown(UP_ARROW) && playerY > playerSize) {
     playerY -= playerSpeed;
   }
-  if (keyIsDown(DOWN_ARROW) && playerY < height - playerSize/2) {
+  if (keyIsDown(DOWN_ARROW) && playerY < height - playerSize) {
     playerY += playerSpeed;
   }
 
   //Collision Checker
   let distance = dist(playerX, playerY, chaosBallX + chaosBallSize/2, chaosBallY + chaosBallSize/2);
-  if (distance < (playerSize + chaosBallSize)/2) {
+  if (distance < (playerSize + chaosBallSize/2)) {
     isGameOver = true
   }
 
